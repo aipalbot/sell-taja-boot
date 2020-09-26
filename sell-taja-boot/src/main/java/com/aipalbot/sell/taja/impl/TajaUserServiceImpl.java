@@ -20,4 +20,11 @@ public class TajaUserServiceImpl implements TajaUserService {
 
         return false;
     }
+
+	@Override
+	public String retrieveUser(String username) {
+		// TODO check if the username provided is the same as our USERNAME constant then return message for 200, true else return false
+		
+		return null;
+	}
 }

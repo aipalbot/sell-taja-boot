@@ -51,4 +51,19 @@ public class UserController {
 
     }
 
+    @GetMapping(value = "/user/{username}")
+    public ResponseEntity<String> getUserByName(@PathVariable String username){
+    	
+    	//TODO: check if user is retrieved and reply appropriate response else reply all types of responses.
+    	
+    	return null;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }

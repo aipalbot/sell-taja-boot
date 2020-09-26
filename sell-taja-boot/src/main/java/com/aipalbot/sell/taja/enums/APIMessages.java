@@ -7,7 +7,7 @@ import lombok.Getter;
 public enum APIMessages {
 	
 	LOGIN_SUCCESSFUL("Successful Operation",200),
-	LOGIN_FAILURE("Invalid username/password supplied",400);
+	LOGIN_FAILURE("Invalid username/password supplied",400); //comment put comma and add more messages
 	
 	
 	

@@ -1,8 +1,10 @@
 package com.aipalbot.sell.taja.services;
 
+import com.aipalbot.sell.taja.enums.APIMessages;
+
 public interface TajaUserService {
 
-    boolean authenticateUser(String username, String password);
-    String retrieveUser(String username);
+    APIMessages authenticateUser(String username, String password);
+    APIMessages retrieveUser(String username);
     
 }

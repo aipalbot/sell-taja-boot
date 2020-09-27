@@ -1,5 +1,6 @@
 package com.aipalbot.sell.taja.impl;
 
+import com.aipalbot.sell.taja.enums.APIMessages;
 import com.aipalbot.sell.taja.services.TajaUserService;
 import org.springframework.stereotype.Service;
 
@@ -10,19 +11,19 @@ public class TajaUserServiceImpl implements TajaUserService {
     private final String PASSWORD = "password";
 
     @Override
-    public boolean authenticateUser(String username, String password) {
+    public APIMessages authenticateUser(String username, String password) {
 
         //validate the username and password if exists
         if(USERNAME.equalsIgnoreCase(username) && PASSWORD.equals(password))
         {
-            return  true;
+            return  APIMessages.LOGIN_SUCCESSFUL;
         }
 
-        return false;
+        return APIMessages.LOGIN_FAILURE;
     }
 
 	@Override
-	public String retrieveUser(String username) {
+	public APIMessages retrieveUser(String username) {
 		// TODO check if the username provided is the same as our USERNAME constant then return message for 200, true else return false
 		
 		return null;

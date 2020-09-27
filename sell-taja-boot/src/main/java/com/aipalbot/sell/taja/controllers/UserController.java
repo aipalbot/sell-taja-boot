@@ -42,13 +42,10 @@ public class UserController {
     public ResponseEntity<String> loginUser(@RequestParam String username, @RequestParam String password){
     	
         //String namePass="Successfully logged in. --> "+ username+" "+password;
+    	APIMessages response = tajaUserService.authenticateUser(username, password);
 
-        if(tajaUserService.authenticateUser(username,password)){
-            return new ResponseEntity<>(APIMessages.LOGIN_SUCCESSFUL.getMessage(),HttpStatus.OK);
-        }
-
-        return new ResponseEntity<>(APIMessages.LOGIN_FAILURE.getMessage(),HttpStatus.BAD_REQUEST);
-
+        return new ResponseEntity<>( response.getMessage(),response.getCode() );
+       
     }
 
     @GetMapping(value = "/user/{username}")

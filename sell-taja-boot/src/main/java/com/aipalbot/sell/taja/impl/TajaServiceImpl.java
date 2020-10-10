@@ -9,12 +9,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 
 @Service
 public class TajaServiceImpl implements TajaService {
     static Map<String,Item> data = new HashMap<>();
-
+    static ConcurrentMap<String,Item> dataConcurrent = new ConcurrentHashMap<>();
 
     static {
 
@@ -32,6 +34,10 @@ public class TajaServiceImpl implements TajaService {
 
         data.put(item1.getId(), item1);
         data.put(item2.getId(),item2);
+        
+     
+        dataConcurrent.put(item1.getId(), item1);
+        dataConcurrent.put(item2.getId(),item2);
     }
 
     TajaServiceImp2 tjs2;

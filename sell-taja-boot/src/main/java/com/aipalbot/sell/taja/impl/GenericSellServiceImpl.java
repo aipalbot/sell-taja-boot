@@ -58,6 +58,9 @@ public class GenericSellServiceImpl<E> implements GenericSellService<E> {
 				CheckingAccount saving = (CheckingAccount) x;
 				saving.setAccountProcess("Execute");
 			}
+			
+			
+			
 		}
 
 		return xArray;
